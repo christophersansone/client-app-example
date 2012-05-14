@@ -7,3 +7,9 @@
 
 App = Ember.Application.create();
 
+$(function() {
+    App.body = App.Body.create();
+    App.body.append();
+  }
+);
+
