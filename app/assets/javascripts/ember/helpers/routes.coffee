@@ -1,9 +1,10 @@
-route = (path, viewClass) ->
+route = (path, controllerClassPath) ->
   Ember.routes.add path, @, (params) ->
-    view = viewClass.create(params)
-    App.layout.set 'body', view
+    controllerClass = Ember.getPath(controllerClassPath)
+    controller = controllerClass.create()
+    controller.execute(params)
 
-route 'home', App.Views.Home
-route 'movies', App.Views.Movies
-route 'movies/:id/edit', App.Views.EditMovie
+route 'home', 'App.Controllers.Home'
+route 'movies', 'App.Controllers.Movies.Index'
+route 'movies/:id/edit', 'App.Controllers.Movies.Edit'
 
