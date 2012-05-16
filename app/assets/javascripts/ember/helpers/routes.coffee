@@ -1,5 +1,6 @@
-Ember.routes.add 'home', @, ->
-  alert 'home'
+Ember.routes.add 'home', @, (params) ->
+  view = App.Views.Home.create(params)
+  App.layout.set 'body', view
 
 Ember.routes.add 'movies', @, (params) ->
   console.log params
