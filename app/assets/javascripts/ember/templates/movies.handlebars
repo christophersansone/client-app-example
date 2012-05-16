@@ -1,4 +1,17 @@
-{{#collection contentBinding="controller.movies"}}
-  {{content.title}}<br />
-{{/collection}}
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>MPAA Rating</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+
+  {{#collection contentBinding="controller.movies" tagName="tbody"}}
+    <td>{{content.title}}</td>
+    <td>{{content.mpaa_rating}}</td>
+    <td>{{content.year}}</td>
+  {{/collection}}
+
+</table>
 
