@@ -31,3 +31,23 @@ App.Controllers.Movies.Index = App.Controller.extend
   sortByYear: ->
     @set 'sortField', 'year'
 
+
+
+
+App.Controllers.Movies.Edit = App.Controller.extend
+  viewClassPath: 'App.Views.EditMovie'
+
+  execute: (params) ->
+    @set 'content', App.Models.Movie.create( id: params.id )
+    @get('content').fetch()
+    @render()
+
+  submit: ->
+    @get('content').save().done(@navigateToMovies)
+
+  cancel: ->
+    @navigateToMovies()
+
+  navigateToMovies: ->
+    Ember.routes.set 'location', '#movies'
+

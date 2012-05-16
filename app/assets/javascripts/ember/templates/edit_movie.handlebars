@@ -1,2 +1,18 @@
-edit movie
+<h1>Editing {{controller.content.title}}</h1>
+
+<form class="well">
+  <label>Title:</label>
+  {{view Ember.TextField valueBinding="controller.content.title"}}
+
+  <label>MPAA Rating:</label>
+  {{view Ember.TextField valueBinding="controller.content.mpaa_rating"}}
+
+  <label>Year:</label>
+  {{view Ember.TextField valueBinding="controller.content.year"}}
+
+  <div class="form-actions">
+    <button type="button" class="btn btn-primary" {{action "submit" target="controller"}}>Submit</button>
+    <button type="button" class="btn" {{action "cancel" target="controller"}}>Cancel</button>
+  </div>
+</form>
 

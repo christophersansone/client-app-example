@@ -8,7 +8,7 @@
   </thead>
 
   {{#collection contentBinding="controller.sortedMovies" tagName="tbody"}}
-    <td>{{content.title}}</td>
+    <td><a {{bindAttr href="content.editPath"}}>{{content.title}}</a></td>
     <td>{{content.mpaa_rating}}</td>
     <td>{{content.year}}</td>
   {{/collection}}

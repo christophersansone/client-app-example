@@ -7,6 +7,11 @@ App.Models.Movie = Ember.Resource.define
     year: Number,
     mpaa_rating: String
 
+App.Models.Movie.reopen
+  editPath: (->
+    "#movies/#{@get 'id'}/edit"
+  ).property('id').cacheable()
+
 App.Models.Movies = Ember.ResourceCollection.extend
   type: App.Models.Movie
 
