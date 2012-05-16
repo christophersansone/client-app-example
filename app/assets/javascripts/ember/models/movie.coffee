@@ -4,7 +4,7 @@ App.Models.Movie = Ember.Resource.define
     id: Number
     title: String,
     description: String,
-    year: String,
+    year: Number,
     mpaa_rating: String
 
 App.Models.Movies = Ember.ResourceCollection.extend
