@@ -1,12 +1,9 @@
-Ember.routes.add 'home', @, (params) ->
-  view = App.Views.Home.create(params)
-  App.layout.set 'body', view
+route = (path, viewClass) ->
+  Ember.routes.add path, @, (params) ->
+    view = viewClass.create(params)
+    App.layout.set 'body', view
 
-Ember.routes.add 'movies', @, (params) ->
-  console.log params
-  alert('movies')
-
-Ember.routes.add 'movies/:id/edit', @, (params) ->
-  console.log params
-  alert('edit movie')
+route 'home', App.Views.Home
+route 'movies', App.Views.Movies
+route 'movies/:id/edit', App.Views.EditMovie
 
