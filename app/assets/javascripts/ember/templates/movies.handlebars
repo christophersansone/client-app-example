@@ -1,13 +1,13 @@
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>MPAA Rating</th>
-      <th>Year</th>
+      <th><a href="#" {{action "sortByTitle" target="controller"}}>Title</a></th>
+      <th><a href="#" {{action "sortByRating" target="controller"}}>MPAA Rating</th>
+      <th><a href="#" {{action "sortByYear" target="controller"}}>Year</th>
     </tr>
   </thead>
 
-  {{#collection contentBinding="controller.movies" tagName="tbody"}}
+  {{#collection contentBinding="controller.sortedMovies" tagName="tbody"}}
     <td>{{content.title}}</td>
     <td>{{content.mpaa_rating}}</td>
     <td>{{content.year}}</td>
