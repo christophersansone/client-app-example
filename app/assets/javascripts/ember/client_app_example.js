@@ -11,11 +11,3 @@ App.Models = {};
 App.Controllers = {};
 App.Views = {};
 
-
-
-$(function() {
-    App.layout = App.Layout.create();
-    App.layout.append();
-  }
-);
-
