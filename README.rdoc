@@ -13,7 +13,11 @@ uses Rails for the backend and Ember.js as the framework for the frontend.
 
 3. Run <tt>bundle install</tt> to install all of the Rails packages required for the server app.
 
-4. Run <tt>rails server</tt> to start the web server.
+4. Run <tt>rake db:migrate</tt> to set up the database structure.
 
-5. In your browser, navigate to <tt>http://localhost:3000</tt>
+5. Run <tt>rake db:seed</tt> to pre-populate the database with some data.
+
+6. Run <tt>rails server</tt> to start the web server.
+
+7. In your browser, navigate to <tt>http://localhost:3000</tt> to view the app.
 
